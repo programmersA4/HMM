@@ -5,7 +5,7 @@ import cv2
 import os
 
 
-image_names = [name for name in os.listdir('./static/auth/images')]
+image_names = [name for name in os.listdir('./static/images/auth')]
 current_id = len(image_names)
 print(current_id, image_names)
 
