@@ -21,6 +21,11 @@ def capture_img():
     msg = service.save_img(request.form["img"])
     return make_response(msg)
 
+@app.route('/sample', methods=['GET'])
+def sample_api_response():
+    # return jsonify(data001='DATA001')
+    return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run()
