@@ -18,6 +18,7 @@ function stopWebcam () {
   stopButton.onclick = function () {
     window.stream.getTracks()[0].stop();
     document.querySelector('#showVideo').disabled = false;
+    document.querySelector('#stopCamera').disabled = true;
     document.querySelector('#captureBtn').disabled = true;
     document.querySelector('#container').innerHTML = `<video id="gum-local" autoplay playsinline></video>`;
   };
@@ -91,6 +92,7 @@ async function init(e) {
     handleSuccess(stream);
     e.target.disabled = true;
     document.querySelector('#captureBtn').disabled = false;
+    document.querySelector('#stopCamera').disabled = false;
   } catch (e) {
     handleError(e);
   }
