@@ -1,4 +1,3 @@
-
 import base64
 import numpy as np
 import cv2
@@ -24,4 +23,4 @@ def save_img(img_base64):
     print(current_id)
     #Save image
     cv2.imwrite(image_file, img)
-    return "SUCCESS"
+    return "SUCCESS", image_file

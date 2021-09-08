@@ -8,3 +8,5 @@ tryouts/
 
 static/images/*
 static/images/auth/*
+yolo_serve/
+object_detector/

@@ -1,7 +1,10 @@
 from flask import Flask, json, render_template, url_for, request, redirect, jsonify, make_response
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS, cross_origin
+
 import service
+from preprocess import preprocess, predict
+
 
 
 app = Flask(__name__, template_folder='Template')
@@ -18,8 +21,13 @@ def index():
 
 @app.route('/capture_img', methods=['POST'])
 def capture_img():
-    msg = service.save_img(request.form["img"])
-    return make_response(msg)
+    msg, im_file = service.save_img(request.form["img"])
+    print(msg, im_file)
+    rib = preprocess(im_file[2:])
+    res = predict(rib)
+    print(res)
+    # return make_response(*res)
+    return make_response({'result': res})
 
 @app.route('/sample', methods=['GET'])
 def sample_api_response():
