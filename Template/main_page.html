@@ -1,63 +1,390 @@
-<!DOCTYPE html>
-<!--
- *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
- *
- *  Use of this source code is governed by a BSD-style license
- *  that can be found in the LICENSE file in the root of the source
- *  tree.
--->
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="WebRTC code samples">
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
-    <meta itemprop="description" content="Client-side WebRTC code samples">
-    <meta itemprop="image" content="../../../images/webrtc-icon-192x192.png">
-    <meta itemprop="name" content="WebRTC code samples">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta id="theme-color" name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Album example · Bootstrap v5.1</title>
 
-    <base target="_blank">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
-    <title>getUserMedia</title>
 
-    <!-- <link rel="icon" sizes="192x192" href="../../../images/webrtc-icon-192x192.png"> -->
-    <link rel="icon" sizes="192x192" href="../static/images/meow_yes.png">
-    <!-- <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css"> -->
-    <!-- <link rel="stylesheet" href="../../../css/main.css"> -->
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../static/src/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="../static/src/hscroll.css"> -->
+    <link href="{{url_for('static', filename='src/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='src/hscroll.css')}}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
   </head>
-
   <body>
-    <div>
-      <h1>Habit Maketh man</h1>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            <strong>Habits Maketh Man</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Album example</h1>
+            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+            <p>
+              <a href="#" class="btn btn-primary my-2">Main call to action</a>
+              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workout container -->
+      <div class="container text-center album bg-light" id="workout">
+        <h2 class="mt-4">Workout</h2>
+        <p class="subtitle">Horizontal scrolling without CSS. Just copy scrolling wrapper classes</p>
+        
+        <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">  
+          <!-- scroll wrapper -->
+          <div class="col-sm-auto" id="plank">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="45%" y="50%" fill="#eceeef" dy=".3em">Plank</text>
+              </svg>
+            <div class="card-body">
+                <p class="card-text">This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-auto" id="crunch">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Crunch</text>
+              </svg>
+            <div class="card-body">
+                <p class="card-text">This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-auto" id="pushup">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Push-up</text>
+              </svg>
+            <div class="card-body">
+                <p class="card-text">This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-auto" id="pull-up">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Pull-up</text>
+              </svg>
+            <div class="card-body">
+                <p class="card-text">This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-auto" id="legraise">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Leg-Raise</text>
+              </svg>
+            <div class="card-body">
+                <p class="card-text">This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="card card-block card-10"></div>
+          </div>
+        <!-- scroll wrapper --> 
+        </div>
     </div>
+    <!-- Workout container -->
 
-    <div id="container">
-      <video id="gum-local" autoplay playsinline></video>
-    </div>
-    <div id="btn-container">
-      <button id="showVideo">Open camera</button>
-      <button id="stopCamera" disabled>Stop camera</button>
-      <button id="captureBtn" disabled>Capture</button>
-    </div>  
-    <div id="errorMsg"></div>
-    <div>
-      <!-- <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
-
-      <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
-
-      <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in
-        global scope, so you can inspect it from the console.</p>
-
-      <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum"
-      title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>         -->
+    <!-- Dailylife container -->
+    <div class="container text-center album  bg-light" id="dailylife">
+      <h2 class="mt-5">Dailylife</h2>
+      <p class="subtitle">Horizontal scrolling without CSS. Just copy scrolling wrapper classes</p>
       
-      <canvas></canvas>
+      <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">  
+        <!-- scroll wrapper -->
+        <div class="col-sm-auto" id="pet">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Walk  with pet</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-auto" id="">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">____</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card card-block card-10"></div>
+        </div>
+        <!-- scroll wrapper --> 
+        </div>
+    </div>
+    <!-- Dailylife container -->
+
+    <!-- Diet container -->
+    <div class="container text-center album  bg-light" id="diet">
+      <h2 class="mt-5">Diet</h2>
+      <p class="subtitle">Horizontal scrolling without CSS. Just copy scrolling wrapper classes</p>
+      
+      <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">  
+        <!-- scroll wrapper -->
+        <div class="col-sm-auto" id="Salad">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Salad</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-auto" id="fruit">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Fruit</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card card-block card-10"></div>
+        </div>
+        <!-- scroll wrapper --> 
+        </div>
+    </div>
+    <!-- Diet container -->
+
+
+    </main>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      </div>
+    </footer>
+
+    <!-- Modal for Capture -->
+    <div class="modal fade" id="captureModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="captureModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="container overflow-hidden">
+              <div class="row p-1">
+                <video id="gum-local" class="col align-self-center" autoplay playsinline></video>
+              </div>
+            </div>
+            <div id="btn-container" class="row p-1">
+              <div class="col">
+                <button id="showVideo" class="col-12 btn btn-primary">Open camera</button>
+              </div>
+              <div class="col">
+                <button id="stopCamera" class="col-12 btn btn-primary" disabled>Stop camera</button>
+              </div>
+              <div class="col">
+                <button id="captureBtn" class="col-12 btn btn-primary" disabled>Capture</button>
+              </div>
+            </div>  
+            <div id="errorMsg" class="row"></div>
+            <div class="row">
+              <canvas></canvas>
+            </div>        
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" id="ModalCloseBtn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- <script src="../static/src/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <!-- <script type="text/javascript" src="../static/src/main.js"></script> -->
+    <!-- <script type="text/javascript" src="../static/src/ga.js"></script> -->
     <script type="text/javascript" src="{{url_for('static', filename='src/main.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static', filename='src/ga.js')}}"></script>
+
+    <script>
+      // document.body.click( function (event){
+      //   console.log(event.target.nodeName);
+      // })
+      $( "body" ).click(function( event ) {
+        // console.log(event.target.nodeName);
+        habit = ""
+
+        if (event.target.nodeName === 'image' && event.target.nextElementSibling.nodeName === 'text'){
+          habit = event.target.nextElementSibling.innerHTML;
+        } else if (event.target.nodeName === 'text' || event.target.previousElementSibling.nodeName === 'image') {
+          habit = event.target.innerHTML;
+        }
+        console.log(event.target.nodeName);
+        console.log(habit);
+        if (habit) {
+          localStorage.setItem('challenge', habit);
+          $( "#captureModalLabel" ).text(localStorage.getItem('challenge'));
+          $( "#captureModal" ).modal('show');
+        }
+        // $( "#log" ).html( "clicked: " + event.target.nodeName );
+      });
+    </script>
+
   </body>
 </html>

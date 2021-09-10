@@ -26,19 +26,21 @@ def index():
 @app.route('/capture_img', methods=['POST'])
 def capture_img():
     msg, im_file = service.save_img(request.form["img"])
+    challenge = request.form["challenge"]
     # rib = preprocess(im_file[2:])
     # res = predict(rib)
     # print(res)
     print(msg, im_file[2:])
     res = model(im_file[2:])
     l = get_pred(res)
+    print(challenge)
     print(l)
     return make_response({'result': l})
 
 @app.route('/sample', methods=['GET'])
 def sample_api_response():
     # return jsonify(data001='DATA001')
-    return render_template('index.html')
+    return render_template('album.html')
 
 
 if __name__ == "__main__":
