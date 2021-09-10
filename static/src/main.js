@@ -15,7 +15,7 @@ const constraints = window.constraints = {
 
 function stopWebcam () {
   const stopButton = document.querySelector('#stopCamera');
-  stopButton.onclick = function () {
+  stopButton.onclick  = function () {
     window.stream.getTracks()[0].stop();
     document.querySelector('#showVideo').disabled = false;
     document.querySelector('#stopCamera').disabled = true;
@@ -29,6 +29,7 @@ function sendImg(img_base64){
 
   const formbody = new FormData();
   formbody.append('img', img_base64);
+  formbody.append('challenge', localStorage.getItem('challenge'))
 
   xhr.open('POST', 'http://localhost:5000/capture_img', true);
   xhr.onload = () => {
