@@ -20,7 +20,7 @@ function stopWebcam () {
     document.querySelector('#showVideo').disabled = false;
     document.querySelector('#stopCamera').disabled = true;
     document.querySelector('#captureBtn').disabled = true;
-    document.querySelector('#container').innerHTML = `<video id="gum-local" autoplay playsinline></video>`;
+    document.querySelector('#container').innerHTML = `<div class="row p-1"><video id="gum-local" autoplay playsinline></video></div>`;
   };
 }
 
@@ -33,7 +33,10 @@ function sendImg(img_base64){
 
   xhr.open('POST', 'http://localhost:5000/capture_img', true);
   xhr.onload = () => {
-      console.log(xhr.responseText)
+      var data = JSON.parse(xhr.responseText);
+      console.log(data);
+      // console.log(JSON.parse(xhr.responseText));
+      // console.log(typeof(data));
   };
   xhr.send(formbody);
 }
@@ -52,8 +55,9 @@ function captureImg(){
     var img_base64 = canvas.toDataURL('image/jpeg').replace(/^.*,/, '');
     
     sendImg(img_base64);  
+    // console.log(result);
   };
-
+  
 }
 
 function handleSuccess(stream) {

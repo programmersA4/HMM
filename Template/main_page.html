@@ -6,16 +6,17 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Album example · Bootstrap v5.1</title>
+    <title>HMM · AI 습관 인증</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="../static/src/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="../static/src/hscroll.css"> -->
-    <link href="{{url_for('static', filename='src/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='src/placeholder.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="{{url_for('static', filename='src/hscroll.css')}}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../static/src/hscroll.css"> -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
   </head>
@@ -52,6 +53,7 @@
           </button>
         </div>
       </div>
+      
     </header>
 
     <main>
@@ -97,13 +99,13 @@
             </div>
           </div>
 
-          <div class="col-sm-auto" id="crunch">
+          <div class="col-sm-auto" id="pullup">
             <div class="card shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
                 <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Crunch</text>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Pull-up</text>
               </svg>
             <div class="card-body">
                 <p class="card-text">This content is a little bit longer.</p>
@@ -139,13 +141,13 @@
             </div>
           </div>
           
-          <div class="col-sm-auto" id="pull-up">
+          <div class="col-sm-auto" id="squat">
             <div class="card shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
                 <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Pull-up</text>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">squat</text>
               </svg>
             <div class="card-body">
                 <p class="card-text">This content is a little bit longer.</p>
@@ -158,31 +160,6 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-sm-auto" id="legraise">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Leg-Raise</text>
-              </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card card-block card-10"></div>
           </div>
         <!-- scroll wrapper --> 
         </div>
@@ -196,6 +173,27 @@
       
       <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">  
         <!-- scroll wrapper -->
+        <div class="col-sm-auto" id="stairs">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Stairs</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="col-sm-auto" id="pet">
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -217,13 +215,13 @@
           </div>
         </div>
 
-        <div class="col-sm-auto" id="">
+        <div class="col-sm-auto" id="bicyle">
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
               <title>Placeholder</title>
               <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
               <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em">____</text>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Bicyle</text>
             </svg>
           <div class="card-body">
               <p class="card-text">This content is a little bit longer.</p>
@@ -238,8 +236,25 @@
           </div>
         </div>
 
-        <div class="col-3">
-          <div class="card card-block card-10"></div>
+        <div class="col-sm-auto" id="instrument">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Instrument</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- scroll wrapper --> 
         </div>
@@ -260,6 +275,27 @@
               <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
               <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
               <text x="50%" y="50%" fill="#eceeef" dy=".3em">Salad</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-auto" id="Milk">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Milk</text>
             </svg>
           <div class="card-body">
               <p class="card-text">This content is a little bit longer.</p>
@@ -295,8 +331,25 @@
           </div>
         </div>
 
-        <div class="col-3">
-          <div class="card card-block card-10"></div>
+        <div class="col-sm-auto" id="Tea">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Tea</text>
+            </svg>
+          <div class="card-body">
+              <p class="card-text">This content is a little bit longer.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- scroll wrapper --> 
         </div>
@@ -325,7 +378,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div id="container overflow-hidden">
+            <div id="container" class="overflow-hidden">
               <div class="row p-1">
                 <video id="gum-local" class="col align-self-center" autoplay playsinline></video>
               </div>
@@ -342,7 +395,8 @@
               </div>
             </div>  
             <div id="errorMsg" class="row"></div>
-            <div class="row">
+            <div id="inference-result" class="row"></div>
+            <div class="row" id="canvas-wrapper">
               <canvas></canvas>
             </div>        
           </div>
@@ -361,6 +415,7 @@
     <!-- <script type="text/javascript" src="../static/src/ga.js"></script> -->
     <script type="text/javascript" src="{{url_for('static', filename='src/main.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static', filename='src/ga.js')}}"></script>
+    
 
     <script>
       // document.body.click( function (event){
@@ -369,11 +424,14 @@
       $( "body" ).click(function( event ) {
         // console.log(event.target.nodeName);
         habit = ""
-
-        if (event.target.nodeName === 'image' && event.target.nextElementSibling.nodeName === 'text'){
-          habit = event.target.nextElementSibling.innerHTML;
-        } else if (event.target.nodeName === 'text' || event.target.previousElementSibling.nodeName === 'image') {
-          habit = event.target.innerHTML;
+        try {
+          if (event.target.nodeName === 'image' && event.target.nextElementSibling.nodeName === 'text'){
+            habit = event.target.nextElementSibling.innerHTML;
+          } else if (event.target.nodeName === 'text' || event.target.previousElementSibling.nodeName === 'image') {
+            habit = event.target.innerHTML;
+          }
+        } catch(e) {
+          console.log(`${e.name}: ${e.message}`)
         }
         console.log(event.target.nodeName);
         console.log(habit);
@@ -382,7 +440,16 @@
           $( "#captureModalLabel" ).text(localStorage.getItem('challenge'));
           $( "#captureModal" ).modal('show');
         }
-        // $( "#log" ).html( "clicked: " + event.target.nodeName );
+      });
+
+      // $('.btn-close').click(() => {
+      $('#captureModal').on('hidden.bs.modal', function (e){
+        window.stream.getTracks()[0].stop();
+        document.querySelector('#showVideo').disabled = false;
+        document.querySelector('#stopCamera').disabled = true;
+        document.querySelector('#captureBtn').disabled = true;
+        document.querySelector('#container').innerHTML = `<div class="row p-1"><video id="gum-local" autoplay playsinline></video></div>`;
+        document.querySelector('#canvas-wrapper').innerHTML = `<canvas></canvas>`;
       });
     </script>
 
