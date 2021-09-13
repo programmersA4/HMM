@@ -4,7 +4,7 @@ import cv2
 import os
 
 
-image_names = [name for name in os.listdir('./static/images/auth')]
+image_names = [name for name in os.listdir('static/images/auth')]
 current_id = len(image_names)
 print(current_id, image_names)
 
@@ -19,7 +19,7 @@ def save_img(img_base64):
 
     #Path to save the decoded image
     current_id += 1
-    image_file=f"./static/images/auth/img{current_id:04}.jpg"
+    image_file=f"static/images/auth/img{current_id:04}.jpg"
     print(current_id)
     #Save image
     cv2.imwrite(image_file, img)
