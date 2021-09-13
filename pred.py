@@ -9,12 +9,12 @@ def get_pred(results):
         if pred.shape[0]:
             for c in pred[:, -1].unique():
                 n = (pred[:, -1] == c).sum()  # detections per class
-                obj = results.names[int(c)]
+                obj = results.names[int(c)].lower()
                 detected_objs[obj] = int(n)
             
             # show print confidence and bounding box
             for *box, conf, cls in reversed(pred):  # xyxy, confidence, class
-                        # label = f'{names[int(cls)]} {conf:.2f}'
                         label = f'{results.names[int(cls)]} {conf:.2f}'
-                        print(label, tuple(map(float, box)))
+                        bbox = tuple(map(float, box))
+                        print(label)
     return detected_objs
