@@ -1,12 +1,10 @@
-ed3f.json
 .git_experiment_on_colab_token
 
-__pycache__/
 .venv/
+**/__pycache__/
 
-tryouts/
+static/images/auth/**
+static/images/infered/**
 
-static/images/*
-static/images/auth/*
-yolo_serve/
-object_detector/
+Unipose/
+**.pt

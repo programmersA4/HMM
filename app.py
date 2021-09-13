@@ -32,7 +32,7 @@ def capture_img():
     # res = predict(rib)
     # print(res)
     infered = model(im_file[2:])
-    infered.save(save_dir="static/images")
+    infered.save(save_dir="static/images/infered")
     deteced = get_pred(infered)
     deteced['img'] = url_for('static', filename=im_file[2:])
     print(deteced)
