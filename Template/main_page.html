@@ -6,16 +6,17 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Album example · Bootstrap v5.1</title>
+    <title>HMM · AI 습관 인증</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
 
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="../static/src/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="../static/src/hscroll.css"> -->
-    <link href="{{url_for('static', filename='src/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='src/placeholder.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="{{url_for('static', filename='src/hscroll.css')}}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../static/src/hscroll.css"> -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
   </head>
@@ -32,9 +33,8 @@
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
+                <li><a href="https://github.com/programmersA4" class="text-white">Github</a></li>
+                <!-- <li><a href="#" class="text-white">Email me</a></li> -->
               </ul>
             </div>
           </div>
@@ -52,6 +52,7 @@
           </button>
         </div>
       </div>
+      
     </header>
 
     <main>
@@ -61,10 +62,10 @@
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="fw-light">Album example</h1>
             <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-            <p>
+            <!-- <p>
               <a href="#" class="btn btn-primary my-2">Main call to action</a>
               <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            </p>
+            </p> -->
           </div>
         </div>
       </section>
@@ -81,39 +82,25 @@
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <image xlink:href="{{url_for('static', filename='images/plank_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
                 <text x="45%" y="50%" fill="#eceeef" dy=".3em">Plank</text>
               </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
+              <div class="card-body">
+                <p class="card-text fs-6 fw-bold">플랭크</p>  
               </div>
             </div>
           </div>
 
-          <div class="col-sm-auto" id="crunch">
+          <div class="col-sm-auto" id="pullup">
             <div class="card shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Crunch</text>
+                <image xlink:href="{{url_for('static', filename='images/pullup_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Pull-up</text>
               </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
+              <div class="card-body">
+                <p class="card-text fs-6 fw-bold">턱걸이</p>
               </div>
             </div>
           </div>
@@ -123,66 +110,27 @@
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <image xlink:href="{{url_for('static', filename='images/pushup_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
                 <text x="50%" y="50%" fill="#eceeef" dy=".3em">Push-up</text>
               </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
+              <div class="card-body">
+                <p class="card-text fs-6 fw-bold">팔굽혀펴기</p>
               </div>
             </div>
           </div>
           
-          <div class="col-sm-auto" id="pull-up">
+          <div class="col-sm-auto" id="squat">
             <div class="card shadow-sm">
               <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Pull-up</text>
+                <image xlink:href="{{url_for('static', filename='images/squat_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">squat</text>
               </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
+              <div class="card-body">
+                <p class="card-text fs-6 fw-bold">스쿼트</p>
               </div>
             </div>
-          </div>
-
-          <div class="col-sm-auto" id="legraise">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-                <image xlink:href="{{url_for('static', filename='images/workout_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Leg-Raise</text>
-              </svg>
-            <div class="card-body">
-                <p class="card-text">This content is a little bit longer.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  </div>
-                  <small class="text-muted">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card card-block card-10"></div>
           </div>
         <!-- scroll wrapper --> 
         </div>
@@ -196,6 +144,20 @@
       
       <div class="scrolling-wrapper row flex-row flex-nowrap mt-2 pb-2 pt-2">  
         <!-- scroll wrapper -->
+        <div class="col-sm-auto" id="stairs">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
+              <image xlink:href="{{url_for('static', filename='images/stairs_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Stairs</text>
+            </svg>
+            <div class="card-body">
+              <p class="card-text fs-6 fw-bold">계단 이용하기</p>
+            </div>
+          </div>
+        </div>
+
         <div class="col-sm-auto" id="pet">
           <div class="card shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -205,42 +167,11 @@
               <text x="50%" y="50%" fill="#eceeef" dy=".3em">Walk  with pet</text>
             </svg>
           <div class="card-body">
-              <p class="card-text">This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+              <p class="card-text fs-6 fw-bold">반려동물과 산책하기</p>
             </div>
           </div>
         </div>
 
-        <div class="col-sm-auto" id="">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-              <image xlink:href="{{url_for('static', filename='images/pet_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
-              <text x="50%" y="50%" fill="#eceeef" dy=".3em">____</text>
-            </svg>
-          <div class="card-body">
-              <p class="card-text">This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-3">
-          <div class="card card-block card-10"></div>
-        </div>
         <!-- scroll wrapper --> 
         </div>
     </div>
@@ -258,18 +189,11 @@
             <svg class="bd-placeholder-img card-img-top" width="300" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
               <title>Placeholder</title>
               <!-- <rect width="100%" height="100%" fill="#55595c"/> -->
-              <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
+              <image xlink:href="{{url_for('static', filename='images/salad_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
               <text x="50%" y="50%" fill="#eceeef" dy=".3em">Salad</text>
             </svg>
-          <div class="card-body">
-              <p class="card-text">This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+            <div class="card-body">
+                <p class="card-text fs-6 fw-bold">샐러드로 식사</p>
             </div>
           </div>
         </div>
@@ -282,22 +206,12 @@
               <image xlink:href="{{url_for('static', filename='images/fruit_m.jpg')}}" x=-50 y=-75 width="400" height="400"/>
               <text x="50%" y="50%" fill="#eceeef" dy=".3em">Fruit</text>
             </svg>
-          <div class="card-body">
-              <p class="card-text">This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
+            <div class="card-body">
+              <p class="card-text fs-6 fw-bold">과일 섭취하기</p>
             </div>
           </div>
         </div>
 
-        <div class="col-3">
-          <div class="card card-block card-10"></div>
-        </div>
         <!-- scroll wrapper --> 
         </div>
     </div>
@@ -311,8 +225,8 @@
         <p class="float-end mb-1">
           <a href="#">Back to top</a>
         </p>
-        <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+        <p class="mb-1">HMM과 습관 만들기</p>
+        <p class="mb-0"><a href="https://github.com/programmersA4">Project Github Home</a></p>
       </div>
     </footer>
 
@@ -325,7 +239,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div id="container overflow-hidden">
+            <div id="container" class="overflow-hidden">
               <div class="row p-1">
                 <video id="gum-local" class="col align-self-center" autoplay playsinline></video>
               </div>
@@ -342,7 +256,8 @@
               </div>
             </div>  
             <div id="errorMsg" class="row"></div>
-            <div class="row">
+            <div id="inference-result" class="row"></div>
+            <div class="row" id="canvas-wrapper">
               <canvas></canvas>
             </div>        
           </div>
@@ -354,36 +269,49 @@
       </div>
     </div>
 
-    <!-- <script src="../static/src/bootstrap.bundle.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <!-- <script type="text/javascript" src="../static/src/main.js"></script> -->
     <!-- <script type="text/javascript" src="../static/src/ga.js"></script> -->
     <script type="text/javascript" src="{{url_for('static', filename='src/main.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static', filename='src/ga.js')}}"></script>
+    
 
     <script>
       // document.body.click( function (event){
       //   console.log(event.target.nodeName);
       // })
-      $( "body" ).click(function( event ) {
+      $( "body" ).click(function (event) {
         // console.log(event.target.nodeName);
         habit = ""
-
-        if (event.target.nodeName === 'image' && event.target.nextElementSibling.nodeName === 'text'){
-          habit = event.target.nextElementSibling.innerHTML;
-        } else if (event.target.nodeName === 'text' || event.target.previousElementSibling.nodeName === 'image') {
-          habit = event.target.innerHTML;
+        try {
+          if (event.target.nodeName === 'image' && event.target.nextElementSibling.nodeName === 'text'){
+            habit = event.target.nextElementSibling.innerHTML;
+          } else if (event.target.nodeName === 'text' || event.target.previousElementSibling.nodeName === 'image') {
+            habit = event.target.innerHTML;
+          }
+        } catch(e) {
+          // console.log(`${e.name}: ${e.message}`)
         }
-        console.log(event.target.nodeName);
-        console.log(habit);
+        // console.log(event.target.nodeName);
+        // console.log(habit);
         if (habit) {
           localStorage.setItem('challenge', habit);
           $( "#captureModalLabel" ).text(localStorage.getItem('challenge'));
           $( "#captureModal" ).modal('show');
         }
-        // $( "#log" ).html( "clicked: " + event.target.nodeName );
       });
+
+      // $('.btn-close').click(() => {
+      $('#captureModal').on('hidden.bs.modal', function (e){
+        window.stream.getTracks()[0].stop();
+        document.querySelector('#showVideo').disabled = false;
+        document.querySelector('#stopCamera').disabled = true;
+        document.querySelector('#captureBtn').disabled = true;
+        document.querySelector('#container').innerHTML = `<div class="row p-1"><video id="gum-local" autoplay playsinline></video></div>`;
+        document.querySelector('#canvas-wrapper').innerHTML = `<canvas></canvas>`;
+      });
+
     </script>
 
   </body>

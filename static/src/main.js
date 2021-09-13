@@ -20,7 +20,8 @@ function stopWebcam () {
     document.querySelector('#showVideo').disabled = false;
     document.querySelector('#stopCamera').disabled = true;
     document.querySelector('#captureBtn').disabled = true;
-    document.querySelector('#container').innerHTML = `<video id="gum-local" autoplay playsinline></video>`;
+    document.querySelector('#container').innerHTML = `<div class="row p-1"><video id="gum-local" autoplay playsinline></video></div>`;
+    document.querySelector('#canvas-wrapper').innerHTML = `<canvas></canvas>`; 
   };
 }
 
@@ -33,13 +34,25 @@ function sendImg(img_base64){
 
   xhr.open('POST', 'http://localhost:5000/capture_img', true);
   xhr.onload = () => {
-      console.log(xhr.responseText)
-  };
-  xhr.send(formbody);
+      var data = JSON.parse(xhr.responseText);
+      console.log(data['success']);
+      var bcolor = 'danger'
+      if (data['success'] === true) {
+        bcolor = 'success'
+      }
+      localStorage.setItem('img', data['img']);
+      document.querySelector('#canvas-wrapper').innerHTML = 
+      `<img src="http://localhost:5000/image/${localStorage.getItem('img')}" 
+        class="mt-1 border border-5 border-${bcolor} rounded px-0" width="640" height="480"
+        >
+      </img>`
+    };
+  xhr.send(formbody)
 }
 
 function captureImg(){
   const video = document.querySelector('video');
+  document.querySelector('#canvas-wrapper').innerHTML = `<canvas></canvas>`; 
   const canvas = document.querySelector('canvas');
   canvas.width = 640;
   canvas.height = 480;
@@ -49,11 +62,10 @@ function captureImg(){
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-    var img_base64 = canvas.toDataURL('image/jpeg').replace(/^.*,/, '');
-    
-    sendImg(img_base64);  
-  };
 
+    var img_base64 = canvas.toDataURL('image/jpeg').replace(/^.*,/, '');
+    sendImg(img_base64);
+  };
 }
 
 function handleSuccess(stream) {
