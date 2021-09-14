@@ -1,4 +1,4 @@
-from flask import Flask, json, render_template, url_for, request, redirect, jsonify, make_response, send_from_directory, safe_join, abort
+from flask import Flask, json, render_template, url_for, request, redirect, jsonify, make_response, send_from_directory, safe_join, abort, session
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS, cross_origin
 from requests.api import get
@@ -43,7 +43,7 @@ def send_infered_img(image_name):
 def capture_img():
     pose = ['pullup', 'pushup', 'plank', 'squat']
     yolo = {'stairs': 'stairs', 'walk with pet': ('cat', 'dog'), 'salad': 'salad', 'fruit': 'fruit'}
-    
+        
     msg, im_path = service.save_img(request.form["img"])
     infered_path = "static/images/infered"
     
