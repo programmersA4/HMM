@@ -2,7 +2,7 @@ from flask import Flask, json, render_template, url_for, request, redirect, json
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS, cross_origin
 from requests.api import get
-from Unipose.pose_model_inference import  inference_model
+# from Unipose.pose_model_inference import  inference_model
 import torch
 
 
@@ -14,12 +14,12 @@ app = Flask(__name__, template_folder='Template')
 cors = CORS(app)
 Bootstrap(app)
 
-app.config['image'] = '/home/sonhos/Basement/VisionDemo/static/images/infered'
+app.config['image'] = '/home/ubuntu/hmm/static/images/infered'
 # model = torch.hub.load('JJ-HH/yolov5', 'yolov5x')
 # 핸드폰 계단 샐러드 개 고양이 
-total = torch.hub.load('JJ-HH/yolov5', 'custom', path='yolov5m_total.pt')
+# total = torch.hub.load('taehyun-learn/yolov5', 'custom', path='yolov5m_total.pt')
 # 핸드폰 과일
-fruit = torch.hub.load('JJ-HH/yolov5', 'custom', path='yolov5m_fruit.pt')
+# fruit = torch.hub.load('taehyun-learn/yolov5', 'custom', path='yolov5m_fruit.pt')
 
 
 """
@@ -45,27 +45,38 @@ def capture_img():
     yolo = {'stairs': 'stairs', 'walk with pet': ('cat', 'dog'), 'salad': 'salad', 'fruit': 'fruit'}
     
     msg, im_path = service.save_img(request.form["img"])
-    infered_path = im_path.replace("auth", "infered")
-
+    infered_path = "static/images/infered"
+    
+    print(msg, im_path)
     ch = request.form["challenge"]
     challenge = ch.replace("-", "").lower()
-
+    print(challenge)
     result = {}
+
     if challenge in pose:
+        from Unipose.pose_model_inference import  inference_model
+        print('unipose')
         is_posture = inference_model(challenge, im_path, model_dir='Unipose/classifier')
         result['success'] = is_posture
+        print('unipose infered!')
     else:
+        print('yolo')
         if challenge == 'fruit': 
+            fruit = torch.hub.load('taehyun-learn/yolov5', 'custom', path='yolov5m_fruit.pt')
             infered = fruit(im_path)
         else:
+            total = torch.hub.load('taehyun-learn/yolov5', 'custom', path='yolov5m_total.pt')
             infered = total(im_path)
-        infered.save(save_dir="static/images/infered")
+            print('yolo infered!')
+    
+        infered.save(save_dir='/home/ubuntu/hmm/static/images/infered')
         detected = get_pred(infered)
         result['success'] = yolo.get(challenge, "") in detected
         print(detected)
 
     # url_filename = infered_path.replace("static/", "")
-    filename = infered_path.split('/')[-1].strip(" ")
+    filename = im_path.split('/')[-1].strip(" ")
+    print(filename)
     # print(url_for('static', filename=filename))
     result['img'] = filename
     print(challenge,  result)
@@ -73,6 +84,6 @@ def capture_img():
     return make_response(jsonify(result))
 
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()
     # app.run(host="0.0.0.0", port=5000)

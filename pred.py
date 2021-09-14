@@ -1,3 +1,5 @@
+# import torch
+
 def get_pred(results):
     names = {} # class names
 
@@ -18,3 +20,14 @@ def get_pred(results):
                         bbox = tuple(map(float, box))
                         print(label)
     return detected_objs
+
+# if __name__=="__main__":
+#     fruit = torch.hub.load('taehyun-learn/yolov5', 'custom', path='yolov5m_fruit.pt')
+#     # fruit = torch.hub.load('JJ-HH/yolov5', 'custom', path='yolov5m_fruit.pt')
+
+#     infered = fruit('static/images/auth/img0002.jpg')
+#     infered.save(save_dir='static/images/infered')
+#     print()
+#     print(infered.files[0])
+#     # detected = get_pred(infered)
+#     # print(detected)

@@ -4,12 +4,12 @@ import cv2
 import os
 
 
-image_names = [name for name in os.listdir('static/images/auth')]
-current_id = len(image_names)
-print(current_id, image_names)
 
 def save_img(img_base64):
-    global current_id
+    image_names = [name for name in os.listdir('static/images/auth')]
+    current_id = len(image_names)
+    print(current_id, image_names)
+    
     #binary <- string base64
     img_binary = base64.b64decode(img_base64)
     #jpg <- binary

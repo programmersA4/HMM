@@ -31,8 +31,9 @@ function sendImg(img_base64){
   const formbody = new FormData();
   formbody.append('img', img_base64);
   formbody.append('challenge', localStorage.getItem('challenge'))
-
-  xhr.open('POST', 'http://localhost:5000/capture_img', true);
+  
+  // xhr.open('POST', 'http://localhost:5000/capture_img', true);
+  xhr.open('POST', 'https://ec2-18-216-118-227.us-east-2.compute.amazonaws.com/capture_img', true);
   xhr.onload = () => {
       var data = JSON.parse(xhr.responseText);
       console.log(data['success']);
@@ -42,12 +43,13 @@ function sendImg(img_base64){
       }
       localStorage.setItem('img', data['img']);
       document.querySelector('#canvas-wrapper').innerHTML = 
-      `<img src="http://localhost:5000/image/${localStorage.getItem('img')}" 
+      // `<img src="http://localhost:5000/image/${localStorage.getItem('img')}" 
+      `<img src="https://ec2-18-216-118-227.us-east-2.compute.amazonaws.com/image/${data['img']}" 
         class="mt-1 border border-5 border-${bcolor} rounded px-0" width="640" height="480"
         >
       </img>`
     };
-  xhr.send(formbody)
+  xhr.send(formbody);
 }
 
 function captureImg(){
