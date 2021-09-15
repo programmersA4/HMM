@@ -8,7 +8,7 @@ import torch
 
 import service
 # from preprocess import preprocess, predict
-from pred import get_pred
+from pred import get_pred, check_reuse
 
 app = Flask(__name__, template_folder='Template')
 cors = CORS(app)
@@ -42,7 +42,7 @@ def send_infered_img(image_name):
 @app.route('/capture_img', methods=['POST'])
 def capture_img():
     pose = ['pullup', 'pushup', 'plank', 'squat']
-    yolo = {'stairs': 'stairs', 'walk with pet': ('cat', 'dog'), 'salad': 'salad', 'fruit': 'fruit'}
+    yolo = {'stairs': ['stairs'], 'walk with pet': ['cat', 'dog'], 'salad': ['salad'], 'fruit': ['fruit']}
         
     msg, im_path = service.save_img(request.form["img"])
     infered_path = "static/images/infered"
@@ -71,15 +71,40 @@ def capture_img():
     
         infered.save(save_dir='/home/ubuntu/hmm/static/images/infered')
         detected = get_pred(infered)
-        result['success'] = yolo.get(challenge, "") in detected
-        print(detected)
+        
+        reused = False
+        mobile_detected = False
+        if "mobile phone" in detected:
+            # reused = check_reuse(infered)
+            mobile_detected = True
+            print("mobile phone Detected", end="  ")
+        
+        print("reused:", reused)
+        print("chaellenge:", challenge)
+        print("target_class:", yolo.get(challenge, ""))
+
+        if reused:
+            result['success'] = False
+        else:
+            result['success'] = False
+            for _c in yolo.get(challenge, ""):
+                if _c != 'mobile phone'  and _c in detected:    
+                    result['success'] = True
+                    print("_c:", _c)
+                    break 
+        print("detected_objects:", detected)
 
     # url_filename = infered_path.replace("static/", "")
     filename = im_path.split('/')[-1].strip(" ")
-    print(filename)
+    # print(filename)
     # print(url_for('static', filename=filename))
     result['img'] = filename
-    print(challenge,  result)
+    result["reused"] = reused
+    result["chaellenge"] = challenge
+    result["target_class"] = yolo.get(challenge, "")
+    result["detected_objects"] = detected
+    result["mobile_detected"] = mobile_detected
+    print("result:",  result)
 
     return make_response(jsonify(result))
 

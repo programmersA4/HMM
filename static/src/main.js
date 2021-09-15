@@ -36,7 +36,7 @@ function sendImg(img_base64){
   xhr.open('POST', '//ec2-18-216-118-227.us-east-2.compute.amazonaws.com/capture_img', true);
   xhr.onload = () => {
       var data = JSON.parse(xhr.responseText);
-      console.log(data['success']);
+      console.log(data);
       var bcolor = 'danger'
       var alert1 = 'danger'
       var alert2 = 'Danger'
@@ -63,7 +63,7 @@ function sendImg(img_base64){
       </img>`;
 
       if (data['success'] === true){
-        setTimeout(() => $( "#captureModal" ).modal('hide'), 3300);
+        setTimeout(() => $( "#captureModal" ).modal('hide'), 4400);
       }
     };
   xhr.send(formbody);
