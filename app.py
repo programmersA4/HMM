@@ -93,17 +93,17 @@ def capture_img():
                     print("_c:", _c)
                     break 
         print("detected_objects:", detected)
+        result["reused"] = reused
+        result["target_class"] = yolo.get(challenge, "")
+        result["detected_objects"] = detected
+        result["mobile_detected"] = mobile_detected
 
     # url_filename = infered_path.replace("static/", "")
     filename = im_path.split('/')[-1].strip(" ")
     # print(filename)
     # print(url_for('static', filename=filename))
     result['img'] = filename
-    result["reused"] = reused
     result["chaellenge"] = challenge
-    result["target_class"] = yolo.get(challenge, "")
-    result["detected_objects"] = detected
-    result["mobile_detected"] = mobile_detected
     print("result:",  result)
 
     return make_response(jsonify(result))
