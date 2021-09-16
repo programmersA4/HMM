@@ -8,7 +8,8 @@
 ## Main Features
 
 ## System Architecture
-![image](https://user-images.githubusercontent.com/46590618/133034570-eb2ea14e-0a06-4bd2-94c0-7c54d9723f21.png)
+![arch](https://user-images.githubusercontent.com/20196781/133431588-4afa24ce-b957-4765-8cc9-0b3f07c33bfc.png)
+
 
 ## Repository
 
