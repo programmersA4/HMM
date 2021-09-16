@@ -33,16 +33,22 @@ def check_reuse(results):
             cboxes = []
             # show print confidence and bounding box
             for *box, conf, cls in reversed(pred):  # xyxy, confidence, class
-                        label = f'{results.names[int(cls)]} {conf:.2f}'
+                        # label = f'{results.names[int(cls)]} {conf:.2f}'
+                        label = results.names[int(cls)]
                         bbox = list(map(float, box))
-                        if label == 'mobile phone':
+                        if label == 'Mobile phone':
                             mboxes.append(bbox)
                         else:
                             bbox.append(cls)
                             cboxes.append(bbox)
+            print()
+            print('mboxes', mboxes)
+            print('cboxes', cboxes)
             for cx, cy, cw, ch, cls in cboxes:
                 for mx, my, mw, mh in mboxes:
-                    if not ((mx-mw/2 < cx+cw/2) and (mx+mw/2 > cx-cw/2) and (my-mh/2 < cy+ch/2) and (my+mh/2 > cy-ch/2)):
+                    center_x = cx + cw / 2
+                    center_y = cy + ch / 2
+                    if mx < center_x < mx + mw and my < center_y < mh:
                         obj = results.names[int(cls)].lower()
                         detected_objs[obj] = True
     return detected_objs

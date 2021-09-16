@@ -75,13 +75,13 @@ def capture_img():
         reused = False
         mobile_detected = False
         if "mobile phone" in detected:
-            # reused = check_reuse(infered)
+            reused = check_reuse(infered)
             mobile_detected = True
-            print("mobile phone Detected", end="  ")
+            # print("mobile phone Detected", end="  ")
         
-        print("reused:", reused)
-        print("chaellenge:", challenge)
-        print("target_class:", yolo.get(challenge, ""))
+        # print("reused:", reused)
+        # print("chaellenge:", challenge)
+        # print("target_class:", yolo.get(challenge, ""))
 
         if reused:
             result['success'] = False
@@ -90,9 +90,9 @@ def capture_img():
             for _c in yolo.get(challenge, ""):
                 if _c != 'mobile phone'  and _c in detected:    
                     result['success'] = True
-                    print("_c:", _c)
+                    # print("_c:", _c)
                     break 
-        print("detected_objects:", detected)
+        # print("detected_objects:", detected)
         result["reused"] = reused
         result["target_class"] = yolo.get(challenge, "")
         result["detected_objects"] = detected
