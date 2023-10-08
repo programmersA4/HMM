@@ -40,7 +40,7 @@ Werkzeug==2.0.1
 
 # Unipose
 Cython==0.29.24
-joblib==1.0.1
+joblib==1.2.0
 # numpy==1.21.2
 # opencv-python==4.5.3.56
 # Pillow==9.0.1
